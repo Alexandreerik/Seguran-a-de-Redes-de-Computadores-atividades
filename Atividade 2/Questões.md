@@ -28,4 +28,19 @@ como nas cifras de substituição, os caracteres são rearranjados.
 Esteganografia é a prática de ocultar informações dentro de outros dados (como imagens,
 áudio, texto, etc.) de forma que a presença da informação oculta seja imperceptível para
 observadores não autorizados.
-2-
+
+## 2- Uma generalização da cifra de César, conhecida como cifra de César afim, tem a seguinte forma: a cada letra de texto claro p, substitua-a pela letra de texto cifrado C : C = E([a, b], p) = (ap + b) mod 26 um requisito básico de qualquer algoritmo de encriptação é que ele seja um para um. Ou seja, se p ̸= q, então E(k, p) ̸= E(k, q). Caso contrário, a decriptação é impossível, pois mais de um caractere de texto claro é mapeado no mesmo caractere de texto cifrado. A cifra de César afim não é um-para-um para todos os valores de a. Por exemplo, para a = 2 e b = 3, então E([a, b], 0) = E([a, b], 13) = 3.
+
+
+## (a) existem limitações sobre o valor de b? explique por que sim ou por que não.
+ Sim, há uma limitação sobre o valor de b na cifra de César afim. A razão para isso é que, se b for um múltiplo de 26 ou tiver um fator comum com 26, a função de encriptação não será um-para-um. Isso significa que diferentes valores de p podem resultar no mesmo valor de C, tornando a decriptação ambígua.
+## (b) determine quais valores de a não são permitidos.
+Os valores de 'a' que não são permitidos são aqueles que são divisíveis por 13 ou têm um fator comum com 13. Isso ocorre porque 13 é o fator comum mais alto de 26 (o tamanho do alfabeto em uma cifra de César afim).
+
+## (c) ofereça uma afirmação geral sobre quais valores de a são e não são permitidos. Justifique-a.
+ Em geral, os valores de 'a' permitidos são aqueles que são primos relativos a 26 (ou seja, não têm fatores comuns com 26, exceto 1). Isso garante que a função de encriptação seja um-para-um, pois não haverá fatores comuns que possam resultar em ambiguidade durante a decriptação. Os valores de 'b' devem ser escolhidos de maneira a evitar múltiplos de 26 para garantir a unicidade da encriptação para diferentes valores de 'p'.
+
+
+
+
+
